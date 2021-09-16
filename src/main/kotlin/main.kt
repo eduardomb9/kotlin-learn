@@ -1,36 +1,54 @@
 fun main() {
     val (conta1, conta2) = criarContas()
+    val contas = listOf(conta1, conta2)
+    println("Valores iniciais")
+    imprimeInformacoesContas(contas)
 
 //    testaBlocoCondicional(saldo)
 //    testaLoops()
 //    testaReferencia()
 
-    testaFuncaoDeposito(conta1, conta2)
+//    testaFuncaoDeposito(conta1, conta2)
+//    testaFuncaoSaque(conta1, conta2)
+
+    testaTransferencia(conta1, conta2)
 }
 
-private fun testaFuncaoDeposito(conta1: Conta, conta2: Conta) {
-    val valorDeposito = 50.0
-    deposita(conta1, valorDeposito)
-    deposita(conta2, valorDeposito + 100)
+private fun testaTransferencia(conta1: Conta, conta2: Conta) {
+    val valor = 100.0
+    println("Testando transferencia de valor: $valor")
+    conta1.tranfere(valorTransferencia = valor, contaDestino = conta2)
     imprimeInformacoesContas(listOf(conta1, conta2))
 }
 
-private fun deposita(conta1: Conta, valorDeposito: Double) {
-    conta1.saldo += valorDeposito
+private fun testaFuncaoDeposito(conta1: Conta, conta2: Conta) {
+    println("Depositando valores")
+    val valorDeposito = 50.0
+    conta1.deposita(valorDeposito)
+    conta2.deposita(valorDeposito + 100)
+    imprimeInformacoesContas(listOf(conta1, conta2))
+}
+
+private fun testaFuncaoSaque(conta1: Conta, conta2: Conta) {
+    println("Sacando valores")
+    val valorSaque = 50.0
+    conta1.saca(valorSaque)
+    conta2.saca(valorSaque + 100)
+    imprimeInformacoesContas(listOf(conta1, conta2))
 }
 
 private fun testaReferencia() {
     val conta1 = Conta()
     val conta2 = conta1
     conta1.titular = "Pedro"
-    imprimeInformacoesContas(listOf<Conta>(conta1, conta2))
+    imprimeInformacoesContas(listOf(conta1, conta2))
     conta2.titular = "Maria"
-    imprimeInformacoesContas(listOf<Conta>(conta1, conta2))
+    imprimeInformacoesContas(listOf(conta1, conta2))
 }
 
 private fun imprimeInformacoesContas(contas: List<Conta>) {
     for (c in contas)
-        println("nome do titular: ${c.titular} saldo: ${c.saldo}")
+        println("Titular/conta: ${c.titular}/${c.numero} Saldo: ${c.saldo}")
 }
 
 private fun criarContas(): Pair<Conta, Conta> {
@@ -86,4 +104,21 @@ class Conta {
     var titular: String = ""
     var numero: Int = 0
     var saldo: Double = .0
+
+    fun deposita(valorDeposito: Double) {
+        this.saldo += valorDeposito
+    }
+
+    fun saca(valorSaque: Double) {
+        if (saldo >= valorSaque) this.saldo -= valorSaque
+    }
+
+    fun tranfere(valorTransferencia: Double, contaDestino: Conta): Boolean {
+        if (saldo >= valorTransferencia) {
+            saldo -= valorTransferencia
+            contaDestino.saldo += valorTransferencia
+            return true
+        }
+        return false
+    }
 }
