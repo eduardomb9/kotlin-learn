@@ -8,18 +8,18 @@ fun main() {
     println("Funcionário: ${alex.nome}")
     println("CPF: ${alex.cpf}")
     println("Salário: ${alex.salario}")
-    println("Valor da bonificação: ${alex.bonificacao()}")
+    println("Valor da bonificação: ${alex.bonificacao}")
 
     println("Funcionário: ${gerente.nome}")
     println("CPF: ${gerente.cpf}")
     println("Salário: ${gerente.salario}")
-    println("Valor da bonificação: ${gerente.bonificacao()}")
+    println("Valor da bonificação: ${gerente.bonificacao}")
     println("Autenticacao: ${if (gerente.autentica("121"))  "Autenticado" else "Falhou"}")
 
     println("Funcionário: ${diretor.nome}")
     println("CPF: ${diretor.cpf}")
     println("Salário: ${diretor.salario}")
-    println("Valor da bonificação: ${diretor.bonificacao()}")
+    println("Valor da bonificação: ${diretor.bonificacao}")
     println("PLR: ${diretor.plr}")
     println("Autenticacao: ${if (diretor.autentica("121"))  "Autenticado" else "Falhou"}")
 
