@@ -116,7 +116,7 @@ class Conta {
     fun tranfere(valorTransferencia: Double, contaDestino: Conta): Boolean {
         if (saldo >= valorTransferencia) {
             saldo -= valorTransferencia
-            contaDestino.saldo += valorTransferencia
+            contaDestino.deposita(valorTransferencia)
             return true
         }
         return false
