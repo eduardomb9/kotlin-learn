@@ -38,9 +38,8 @@ private fun testaFuncaoSaque(conta1: Conta, conta2: Conta) {
 }
 
 private fun testaReferencia() {
-    val conta1 = Conta()
+    val conta1 = Conta("Pedro", 1)
     val conta2 = conta1
-    conta1.titular = "Pedro"
     imprimeInformacoesContas(listOf(conta1, conta2))
     conta2.titular = "Maria"
     imprimeInformacoesContas(listOf(conta1, conta2))
@@ -52,14 +51,11 @@ private fun imprimeInformacoesContas(contas: List<Conta>) {
 }
 
 private fun criarContas(): Pair<Conta, Conta> {
-    val conta1 = Conta()
-    conta1.titular = "anderson"
-    conta1.numero = 1
+    val conta1 = Conta(false, "anderson", 1)
     conta1.deposita(100.99)
 
-    val conta2 = Conta()
-    conta2.titular = "ana"
-    conta2.numero = 2
+    // named arguments
+    val conta2 = Conta(numero = 2, titular = "ana")
     conta2.deposita(10000.99)
     return Pair(conta1, conta2)
 }
@@ -100,11 +96,21 @@ private fun testaBlocoCondicional(saldo: Double) {
     }
 }
 
-class Conta {
-    var titular: String = ""
-    var numero: Int = 0
+// construtor primário
+class Conta public constructor(
+    var titular: String,
+    val numero: Int = 0
+) {
     var saldo: Double = .0
         private set
+
+    init {
+        println("Conta dx $titular criada!")
+    }
+
+    constructor(ativa: Boolean, titular: String, numero: Int) : this(titular, numero) {
+        println("Esta conta está ${if (ativa) "ativa" else "desativada"}!")
+    }
 
     fun deposita(valorDeposito: Double) {
         this.saldo += valorDeposito
