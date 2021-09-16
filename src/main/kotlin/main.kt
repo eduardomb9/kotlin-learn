@@ -48,19 +48,19 @@ private fun testaReferencia() {
 
 private fun imprimeInformacoesContas(contas: List<Conta>) {
     for (c in contas)
-        println("Titular/conta: ${c.titular}/${c.numero} Saldo: ${c.saldo}")
+        println("Titular/conta: ${c.titular}/${c.numero} Saldo: ${c.getSaldo()}")
 }
 
 private fun criarContas(): Pair<Conta, Conta> {
     val conta1 = Conta()
     conta1.titular = "anderson"
     conta1.numero = 1
-    conta1.saldo = 100.99
+    conta1.setSaldo(100.99)
 
     val conta2 = Conta()
     conta2.titular = "ana"
     conta2.numero = 2
-    conta2.saldo = 10000.99
+    conta2.setSaldo(10000.99)
     return Pair(conta1, conta2)
 }
 
@@ -103,7 +103,7 @@ private fun testaBlocoCondicional(saldo: Double) {
 class Conta {
     var titular: String = ""
     var numero: Int = 0
-    var saldo: Double = .0
+    private var saldo: Double = .0
 
     fun deposita(valorDeposito: Double) {
         this.saldo += valorDeposito
@@ -120,5 +120,15 @@ class Conta {
             return true
         }
         return false
+    }
+
+    fun getSaldo() : Double {
+        return this.saldo
+    }
+
+    fun setSaldo(valor: Double) {
+        if (valor > 0) {
+            this.saldo = valor
+        }
     }
 }
