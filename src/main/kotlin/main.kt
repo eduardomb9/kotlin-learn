@@ -1,6 +1,8 @@
 fun main() {
 //    executaTestesConta()
 //    testaFuncionarios()
-    testeContaCorrentePoupanca()
+//    testeContaCorrentePoupanca()
 
+    testaFuncionarioAdmin()
 }
+
