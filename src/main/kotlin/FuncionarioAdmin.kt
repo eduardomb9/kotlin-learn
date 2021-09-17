@@ -3,10 +3,10 @@ abstract class FuncionarioAdmin(
     cpf: String,
     salario: Double,
     val senha: String
-): Funcionario(nome, cpf, salario) {
+): Funcionario(nome, cpf, salario), Autenticavel {
 
-    fun autentica(senha: String): Boolean {
-        if (this.senha.equals(senha)) {
+    override fun autentica(senha: String): Boolean {
+        if (this.senha == senha) {
             return true
         }
         return false

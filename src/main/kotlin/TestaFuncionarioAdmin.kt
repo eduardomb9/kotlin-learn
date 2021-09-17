@@ -8,5 +8,5 @@ fun testaFuncionarioAdmin() {
 
     sistemaInterno.entra("111", gerente)
     sistemaInterno.entra("111", diretor)
-//    sistemaInterno.entra("333", cliente)
+    sistemaInterno.entra("333", cliente)
 }

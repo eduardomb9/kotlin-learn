@@ -1,9 +1,9 @@
 class SistemaInterno {
-    fun entra(senha: String, funcionario: FuncionarioAdmin) {
-        if (funcionario.autentica(senha)) {
-            println("${funcionario.nome} autenticado com sucesso!")
+    fun entra(senha: String, autenticavel: Autenticavel) {
+        if (autenticavel.autentica(senha)) {
+            println("Autenticado com sucesso!")
         } else {
-            println("${funcionario.nome} falhou na autenticacao!")
+            println("Falhou na autenticacao!")
         }
     }
 }
