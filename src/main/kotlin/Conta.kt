@@ -1,10 +1,10 @@
 // construtor primário com modificador de acesso requer a palavra constructor: public constructor
-open class Conta (
+abstract class Conta (
     var titular: String,
     val numero: Int = 0
 ) {
     var saldo: Double = .0
-        private set
+        protected set
 
     init {
         println("Conta dx $titular criada!")
@@ -18,9 +18,7 @@ open class Conta (
         this.saldo += valorDeposito
     }
 
-    open fun saca(valorSaque: Double) {
-        if (saldo >= valorSaque) this.saldo -= valorSaque
-    }
+    abstract fun saca(valorSaque: Double)
 
     fun tranfere(valorTransferencia: Double, contaDestino: Conta): Boolean {
         if (saldo >= valorTransferencia) {

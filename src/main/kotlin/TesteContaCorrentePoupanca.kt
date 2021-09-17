@@ -1,6 +1,6 @@
 fun testeContaCorrentePoupanca() {
-    val contaCorrente = ContaCorrente("Alex", 1)
-    val contaPoupanca = ContaPoupanca("Alex", 2)
+    val contaCorrente = ContaCorrente("Alex CC", 1)
+    val contaPoupanca = ContaPoupanca("Alex CP", 2)
 
     println("Conta antes das operacoes")
     println("${contaCorrente.numero} : R$ ${contaCorrente.saldo}")

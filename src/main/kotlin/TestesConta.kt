@@ -22,7 +22,7 @@ fun testaFuncaoSaque(conta1: Conta, conta2: Conta) {
 }
 
 fun testaReferencia() {
-    val conta1 = Conta("Pedro", 1)
+    val conta1 = ContaCorrente("Pedro", 1)
     val conta2 = conta1
     imprimeInformacoesContas(listOf(conta1, conta2))
     conta2.titular = "Maria"
@@ -71,11 +71,11 @@ fun imprimeInformacoesContas(contas: List<Conta>) {
 }
 
 fun criarContas(): Pair<Conta, Conta> {
-    val conta1 = Conta(false, "anderson", 1)
+    val conta1 = ContaCorrente("anderson", 1)
     conta1.deposita(100.99)
 
     // named arguments
-    val conta2 = Conta(numero = 2, titular = "ana")
+    val conta2 = ContaPoupanca(numero = 2, titular = "ana")
     conta2.deposita(10000.99)
     return Pair(conta1, conta2)
 }
