@@ -1,24 +1,24 @@
-fun testaTransferencia(conta1: Conta, conta2: Conta) {
+fun testaTransferencia(contaCompleta1: ContaCompleta, contaCorrente2: ContaCompleta) {
     val valor = 100.0
     println("Testando transferencia de valor: $valor")
-    conta1.tranfere(valorTransferencia = valor, contaDestino = conta2)
-    imprimeInformacoesContas(listOf(conta1, conta2))
+    contaCompleta1.transfere(valorTransferencia = valor, contaSimplesDestino = contaCorrente2)
+    imprimeInformacoesContas(listOf(contaCompleta1, contaCorrente2))
 }
 
-fun testaFuncaoDeposito(conta1: Conta, conta2: Conta) {
+fun testaFuncaoDeposito(contaSimples1: ContaSimples, contaSimples2: ContaSimples) {
     println("Depositando valores")
     val valorDeposito = 50.0
-    conta1.deposita(valorDeposito)
-    conta2.deposita(valorDeposito + 100)
-    imprimeInformacoesContas(listOf(conta1, conta2))
+    contaSimples1.deposita(valorDeposito)
+    contaSimples2.deposita(valorDeposito + 100)
+    imprimeInformacoesContas(listOf(contaSimples1, contaSimples2))
 }
 
-fun testaFuncaoSaque(conta1: Conta, conta2: Conta) {
+fun testaFuncaoSaque(contaSimples1: ContaSimples, contaSimples2: ContaSimples) {
     println("Sacando valores")
     val valorSaque = 50.0
-    conta1.saca(valorSaque)
-    conta2.saca(valorSaque + 100)
-    imprimeInformacoesContas(listOf(conta1, conta2))
+    contaSimples1.saca(valorSaque)
+    contaSimples2.saca(valorSaque + 100)
+    imprimeInformacoesContas(listOf(contaSimples1, contaSimples2))
 }
 
 fun testaReferencia() {
@@ -65,12 +65,12 @@ fun testaBlocoCondicional(saldo: Double) {
     }
 }
 
-fun imprimeInformacoesContas(contas: List<Conta>) {
-    for (c in contas)
+fun imprimeInformacoesContas(contaSimples: List<ContaSimples>) {
+    for (c in contaSimples)
         println("Titular/conta: ${c.titular}/${c.numero} Saldo: ${c.saldo}")
 }
 
-fun criarContas(): Pair<Conta, Conta> {
+fun criarContas(): Pair<ContaCompleta, ContaCompleta> {
     val conta1 = ContaCorrente("anderson", 1)
     conta1.deposita(100.99)
 

@@ -1,3 +1,3 @@
 interface Autenticavel {
-    fun autentica(senha: String) : Boolean
+    fun autentica(senha: String): Boolean
 }

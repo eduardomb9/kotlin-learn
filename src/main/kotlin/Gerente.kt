@@ -9,4 +9,5 @@ class Gerente(
         get() {
             return salario * 1.2
         }
+
 }
