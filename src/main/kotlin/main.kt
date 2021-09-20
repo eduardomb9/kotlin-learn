@@ -10,7 +10,7 @@ fun main() {
 
     val cliente = Cliente("Bob", "111.111.111-11", "1", Endereco(numero="100", bairro="Bairro 1"))
     println("Cliente: ${cliente.nome} bairro: ${cliente.endereco.bairro} Número: ${cliente.endereco.numero}")
-    println("Total de contas criadas: $totalContas")
+    println("Total de contas criadas: ${ContaSimples.totalContas}")
 
     val c1 = object : Autenticavel {
         val nome: String = "Pedro"
