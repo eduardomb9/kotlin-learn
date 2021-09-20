@@ -1,5 +1,8 @@
 package br.com.alura.bytebank.modelo
 
+var totalContas = 0
+    private set
+
 // construtor primário com modificador de acesso requer a palavra constructor: public constructor
 abstract class ContaSimples (
     var titular: Cliente,
@@ -10,6 +13,7 @@ abstract class ContaSimples (
 
     init {
         println("Conta dx $titular criada!")
+        totalContas++
     }
 
     fun deposita(valorDeposito: Double) {
