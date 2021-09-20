@@ -6,12 +6,12 @@ import br.com.alura.bytebank.teste.testePacotesDiferentesMesmoNomeClasse
 import br.com.alura.bytebank.modelo.novoCliente.Cliente as NovoCliente
 
 fun main() {
-    executaTestesConta()
-    testaFuncionarios()
-    testeContaCorrentePoupanca()
-    testaFuncionarioAdmin()
-    testePacotesDiferentesMesmoNomeClasse()
-    testeObject()
-    testeAny()
+//    executaTestesConta()
+//    testaFuncionarios()
+//    testeContaCorrentePoupanca()
+//    testaFuncionarioAdmin()
+//    testePacotesDiferentesMesmoNomeClasse()
+//    testeObject()
+//    testeAny()
     testeEqualsHashCodeToString()
 }

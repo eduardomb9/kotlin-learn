@@ -4,7 +4,7 @@ import br.com.alura.bytebank.modelo.Endereco
 
 fun testeEqualsHashCodeToString() {
     val end1 = Endereco(numero = "1", logradouro = "Rua A")
-    val end2 = Endereco(numero = "2", logradouro = "Rua B")
+    val end2 = Endereco(numero = "1", logradouro = "Rua A")
 
     println(end1.equals(end2))
     println(end1.equals(end1))
