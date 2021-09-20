@@ -1,7 +1,4 @@
-import br.com.alura.bytebank.modelo.ContaCompleta
-import br.com.alura.bytebank.modelo.ContaCorrente
-import br.com.alura.bytebank.modelo.ContaPoupanca
-import br.com.alura.bytebank.modelo.ContaSimples
+import br.com.alura.bytebank.modelo.*
 
 fun testaTransferencia(contaCompleta1: ContaCompleta, contaCorrente2: ContaCompleta) {
     val valor = 100.0
@@ -27,10 +24,10 @@ fun testaFuncaoSaque(contaSimples1: ContaSimples, contaSimples2: ContaSimples) {
 }
 
 fun testaReferencia() {
-    val conta1 = ContaCorrente("Pedro", 1)
+    val conta1 = ContaCorrente(Cliente("Pedro", "111.111.111-11", "111"), 1)
     val conta2 = conta1
     imprimeInformacoesContas(listOf(conta1, conta2))
-    conta2.titular = "Maria"
+    conta2.titular = Cliente("Maria", "222.222.222-22", "222")
     imprimeInformacoesContas(listOf(conta1, conta2))
 }
 
@@ -76,11 +73,11 @@ fun imprimeInformacoesContas(contaSimples: List<ContaSimples>) {
 }
 
 fun criarContas(): Pair<ContaCompleta, ContaCompleta> {
-    val conta1 = ContaCorrente("anderson", 1)
+    val conta1 = ContaCorrente(Cliente("Anderson", "444.444.444-44", "444"), 4)
     conta1.deposita(100.99)
 
     // named arguments
-    val conta2 = ContaPoupanca(numero = 2, titular = "ana")
+    val conta2 = ContaPoupanca(numero = 2, titular = Cliente("Ana", "333.333.333-33", "333"))
     conta2.deposita(10000.99)
     return Pair(conta1, conta2)
 }

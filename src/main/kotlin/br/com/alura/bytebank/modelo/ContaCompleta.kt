@@ -1,6 +1,6 @@
 package br.com.alura.bytebank.modelo
 
-abstract class ContaCompleta (titular: String, numero: Int ): ContaSimples(titular, numero) {
+abstract class ContaCompleta (titular: Cliente, numero: Int ): ContaSimples(titular, numero) {
 
     fun transfere(valorTransferencia: Double, contaSimplesDestino: ContaSimples): Boolean {
         if (saldo >= valorTransferencia) {

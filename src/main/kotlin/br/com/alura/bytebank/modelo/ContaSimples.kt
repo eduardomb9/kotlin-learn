@@ -2,7 +2,7 @@ package br.com.alura.bytebank.modelo
 
 // construtor primário com modificador de acesso requer a palavra constructor: public constructor
 abstract class ContaSimples (
-    var titular: String = "",
+    var titular: Cliente,
     val numero: Int = 0
 ) {
     var saldo: Double = .0

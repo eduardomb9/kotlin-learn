@@ -1,11 +1,12 @@
+import br.com.alura.bytebank.modelo.Cliente
 import br.com.alura.bytebank.modelo.ContaCorrente
 import br.com.alura.bytebank.modelo.ContaPoupanca
 import br.com.alura.bytebank.modelo.ContaSalario
 
 fun testeContaCorrentePoupanca() {
-    val contaCorrente = ContaCorrente("Alex CC", 1)
-    val contaPoupanca = ContaPoupanca("Alex CP", 2)
-    val contaSalario = ContaSalario("Alex CS", numero = 3)
+    val contaCorrente = ContaCorrente(Cliente("Alex CC", "111.111.111-11", "111"), 1)
+    val contaPoupanca = ContaPoupanca(Cliente("Alex CP", "111.111.111-11", "111"), 2)
+    val contaSalario = ContaSalario(Cliente("Alex CS", "111.111.111-11", "111"), numero = 3)
 
     println("Conta antes das operacoes")
     println("${contaCorrente.numero} : R$ ${contaCorrente.saldo}")
