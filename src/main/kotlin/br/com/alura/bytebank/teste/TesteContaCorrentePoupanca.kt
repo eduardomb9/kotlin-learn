@@ -1,3 +1,7 @@
+import br.com.alura.bytebank.modelo.ContaCorrente
+import br.com.alura.bytebank.modelo.ContaPoupanca
+import br.com.alura.bytebank.modelo.ContaSalario
+
 fun testeContaCorrentePoupanca() {
     val contaCorrente = ContaCorrente("Alex CC", 1)
     val contaPoupanca = ContaPoupanca("Alex CP", 2)

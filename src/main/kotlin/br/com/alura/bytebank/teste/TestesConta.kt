@@ -1,3 +1,8 @@
+import br.com.alura.bytebank.modelo.ContaCompleta
+import br.com.alura.bytebank.modelo.ContaCorrente
+import br.com.alura.bytebank.modelo.ContaPoupanca
+import br.com.alura.bytebank.modelo.ContaSimples
+
 fun testaTransferencia(contaCompleta1: ContaCompleta, contaCorrente2: ContaCompleta) {
     val valor = 100.0
     println("Testando transferencia de valor: $valor")
