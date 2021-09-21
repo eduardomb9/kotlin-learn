@@ -17,9 +17,17 @@ fun testaFuncaoDeposito(contaSimples1: ContaSimples, contaSimples2: ContaSimples
 
 fun testaFuncaoSaque(contaSimples1: ContaSimples, contaSimples2: ContaSimples) {
     println("Sacando valores")
-    val valorSaque = 50.0
-    contaSimples1.saca(valorSaque)
-    contaSimples2.saca(valorSaque + 100)
+    val valorSaque = 170.0
+    try {
+        contaSimples1.saca(valorSaque)
+    } catch (e: SaldoInsuficienteException) {
+        e.printStackTrace()
+    }
+    try {
+        contaSimples2.saca(valorSaque)
+    } catch (e: SaldoInsuficienteException) {
+        e.printStackTrace()
+    }
     imprimeInformacoesContas(listOf(contaSimples1, contaSimples2))
 }
 

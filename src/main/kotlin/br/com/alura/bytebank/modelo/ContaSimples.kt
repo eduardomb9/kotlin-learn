@@ -1,7 +1,7 @@
 package br.com.alura.bytebank.modelo
 
 // construtor primário com modificador de acesso requer a palavra constructor: public constructor
-abstract class ContaSimples (
+abstract class ContaSimples(
     var titular: Cliente,
     val numero: Int = 0
 ) {
@@ -25,3 +25,5 @@ abstract class ContaSimples (
     abstract fun saca(valorSaque: Double)
 
 }
+
+class SaldoInsuficienteException : Exception("Saldo é insuficiente!")
