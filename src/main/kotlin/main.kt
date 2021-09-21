@@ -1,7 +1,7 @@
 import br.com.alura.bytebank.teste.testeException
 
 fun main() {
-    executaTestesConta()
+//    executaTestesConta()
 //    testaFuncionarios()
 //    testeContaCorrentePoupanca()
 //    testaFuncionarioAdmin()
@@ -9,7 +9,7 @@ fun main() {
 //    testeObject()
 //    testeAny()
 //    testeEqualsHashCodeToString()
-//    testeException()
+    testeException()
 
 }
 

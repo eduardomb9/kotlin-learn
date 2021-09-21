@@ -1,9 +1,16 @@
+import br.com.alura.bytebank.exception.FalhaAutenticacaoException
+import br.com.alura.bytebank.exception.SaldoInsuficienteException
 import br.com.alura.bytebank.modelo.*
 
 fun testaTransferencia(contaCompleta1: ContaCompleta, contaCorrente2: ContaCompleta) {
     val valor = 100.0
     println("Testando transferencia de valor: $valor")
-    contaCompleta1.transfere(valorTransferencia = valor, contaSimplesDestino = contaCorrente2)
+    try {
+        // senha correta = 444
+        contaCompleta1.transfere(valorTransferencia = valor, contaSimplesDestino = contaCorrente2, "111")
+    } catch (e: FalhaAutenticacaoException) {
+        e.printStackTrace()
+    }
     imprimeInformacoesContas(listOf(contaCompleta1, contaCorrente2))
 }
 

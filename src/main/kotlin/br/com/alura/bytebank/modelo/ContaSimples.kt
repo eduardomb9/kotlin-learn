@@ -26,4 +26,3 @@ abstract class ContaSimples(
 
 }
 
-class SaldoInsuficienteException : Exception("Saldo é insuficiente!")

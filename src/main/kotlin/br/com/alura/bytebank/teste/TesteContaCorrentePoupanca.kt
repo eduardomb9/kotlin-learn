@@ -32,7 +32,8 @@ fun testeContaCorrentePoupanca() {
     println("${contaPoupanca.numero} : R$ ${contaPoupanca.saldo}")
     println("${contaSalario.numero} : R$ ${contaSalario.saldo}")
 
-    contaCorrente.transfere(100.0, contaPoupanca)
+    contaCorrente.transfere(100.0, contaPoupanca, "111")
+    contaCorrente.transfere(100.0, contaPoupanca, "222")
 
     println("Conta depois da transferencia")
     println("${contaCorrente.numero} : R$ ${contaCorrente.saldo}")
