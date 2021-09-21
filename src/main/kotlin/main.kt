@@ -1,3 +1,6 @@
+import br.com.alura.bytebank.teste.testaFuncoesAgregacao
+import br.com.alura.bytebank.teste.testeArrayIteracao
+
 fun main() {
 //    executaTestesConta()
 //    testaFuncionarios()
@@ -12,7 +15,7 @@ fun main() {
 
 
 //    testeArrayIteracao()
-//    testaFuncoesAgregacao()
+    testaFuncoesAgregacao()
 
 }
 

@@ -29,6 +29,21 @@ fun testaFuncoesAgregacao() {
         .map { salario -> calculaAumentoRelativo(salario, aumento) }
         .toTypedArray()
     println("Salarios com aumento: ${salariosComAumento.contentToString()}")
+
+    val totalSalariosComAumento = salariosComAumento.somatoria()
+    println("Soma de todos os salarios: $totalSalariosComAumento")
+
+    val meses = "6".toBigDecimal()
+    val totalSalariosProximos6Meses = salariosComAumento.fold(totalSalariosComAumento) { acumulador, valor ->
+        acumulador + (valor * meses).setScale(2, RoundingMode.UP)
+    }
+    println("Total do gasto de salarios com aumento atual mais os proximos 6 meses: $totalSalariosProximos6Meses")
+
+    val mediaMaiores3Salarios = salariosComAumento.sorted().takeLast(3).toTypedArray().media()
+    println("Média maiores 3 salários: $mediaMaiores3Salarios")
+
+    val mediaMenores3Salarios = salariosComAumento.sorted().take(3).toTypedArray().media()
+    println("Média menores 3 salários: $mediaMenores3Salarios")
 }
 
 fun calculaAumentoRelativo(salario: BigDecimal, aumento: BigDecimal)
@@ -44,4 +59,14 @@ fun bigDecimalArrayOf(vararg valores: String): Array<BigDecimal> {
     return Array<BigDecimal>(valores.size) { i ->
         valores[i].toBigDecimal()
     }
+}
+
+fun Array<BigDecimal>.somatoria() : BigDecimal {
+    return this.reduce { acumulado, valor ->
+        acumulado + valor
+    }
+}
+
+fun Array<BigDecimal>.media() : BigDecimal {
+    return this.somatoria() / this.size.toBigDecimal()
 }
