@@ -1,5 +1,4 @@
-import br.com.alura.bytebank.modelo.Livro
-import br.com.alura.bytebank.modelo.Prateleira
+import br.com.alura.bytebank.teste.testeCollections
 
 fun main() {
 //    executaTestesConta()
@@ -12,13 +11,11 @@ fun main() {
 //    testeEqualsHashCodeToString()
 //    testeException()
 //    testeNullPointerException()
-
-
 //    testeArrayIteracao()
 //    testaFuncoesAgregacao()
-
 //    testaListasLivros()
 //    testaPrateleira()
-}
 
+    testeCollections()
+}
 
