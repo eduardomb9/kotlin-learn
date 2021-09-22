@@ -1,5 +1,6 @@
 import br.com.alura.bytebank.teste.testeCollections
 import br.com.alura.bytebank.teste.testeDistinct
+import br.com.alura.bytebank.teste.testeMaps
 
 fun main() {
 //    executaTestesConta()
@@ -17,7 +18,6 @@ fun main() {
 //    testaListasLivros()
 //    testaPrateleira()
 //    testeCollections()
-
-    testeDistinct()
+//    testeDistinct()
+    testeMaps()
 }
-
