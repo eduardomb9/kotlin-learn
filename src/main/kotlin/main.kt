@@ -1,3 +1,4 @@
+import br.com.alura.bytebank.teste.testaAssociateEGroupBy
 import br.com.alura.bytebank.teste.testeCollections
 import br.com.alura.bytebank.teste.testeDistinct
 import br.com.alura.bytebank.teste.testeMaps
@@ -19,5 +20,8 @@ fun main() {
 //    testaPrateleira()
 //    testeCollections()
 //    testeDistinct()
-    testeMaps()
+//    testeMaps()
+
+    testaAssociateEGroupBy()
+
 }
