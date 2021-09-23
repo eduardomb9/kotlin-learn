@@ -1,7 +1,6 @@
-import br.com.alura.bytebank.teste.testaAssociateEGroupBy
-import br.com.alura.bytebank.teste.testeCollections
-import br.com.alura.bytebank.teste.testeDistinct
-import br.com.alura.bytebank.teste.testeMaps
+import br.com.alura.bytebank.teste.testaFuncaoAnonimaELambda
+import br.com.alura.bytebank.teste.testeInicializacaoVariaveisTipoFuncao
+import kotlin.reflect.KFunction
 
 fun main() {
 //    executaTestesConta()
@@ -21,7 +20,10 @@ fun main() {
 //    testeCollections()
 //    testeDistinct()
 //    testeMaps()
+//    testaAssociateEGroupBy()
 
-    testaAssociateEGroupBy()
+    testeInicializacaoVariaveisTipoFuncao()
+    testaFuncaoAnonimaELambda()
 
 }
+
