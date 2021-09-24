@@ -1,4 +1,6 @@
-import br.com.alura.bytebank.modelo.Endereco
+import br.com.alura.bytebank.teste.testeReciever
+import br.com.alura.bytebank.teste.testeRun
+import br.com.alura.bytebank.teste.testeWith
 
 fun main() {
 //    executaTestesConta()
@@ -27,4 +29,8 @@ fun main() {
 //    implementandoHighOrderFunction()
 //    testeScopeFunctions()
 
+    testeWith()
+    testeRun()
+    testeReciever()
 }
+

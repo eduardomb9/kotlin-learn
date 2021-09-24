@@ -13,7 +13,7 @@ abstract class ContaSimples(
         protected set
 
     init {
-        println("Conta dx $titular criada!")
+        println("Conta dx ${titular.nome} criada!")
 //         Companion.totalContas++ // "Pode ser omitido"
         totalContas++
     }

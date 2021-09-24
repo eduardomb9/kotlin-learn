@@ -30,6 +30,10 @@ fun implementandoHighOrderFunction() {
         println(it)
     }
 
+    somaHighOrderReciever(2, 5) {
+        println("soma usando reciever: $this")
+    }
+
     val autenticavel = object : Autenticavel {
         val senha = "111"
         override fun autentica(senha: String): Boolean = this.senha == senha
@@ -49,6 +53,12 @@ fun teste(teste: Int, bloco: () -> Unit) {
 }
 
 fun somaHighOrder(a: Int, b: Int, resultado: (Int) -> Unit) {
+    println("Executando funcao soma!")
+    resultado(a + b)
+    println("Soma executada com sucesso!")
+}
+
+fun somaHighOrderReciever(a: Int, b: Int, resultado: Int.() -> Unit) {
     println("Executando funcao soma!")
     resultado(a + b)
     println("Soma executada com sucesso!")

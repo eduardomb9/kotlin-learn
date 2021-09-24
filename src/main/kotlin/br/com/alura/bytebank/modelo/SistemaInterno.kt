@@ -1,7 +1,5 @@
 package br.com.alura.bytebank.modelo
 
-import br.com.alura.bytebank.modelo.Autenticavel
-
 class SistemaInterno {
     fun entra(senha: String, autenticavel: Autenticavel, autenticado: () -> Unit = {}) {
         if (autenticavel.autentica(senha)) {
@@ -10,6 +8,20 @@ class SistemaInterno {
         } else {
             println("Falhou na autenticacao!")
         }
-
     }
+
+    fun entraReciever(senha: String, autenticavel: Autenticavel, autenticado: SistemaInterno.() -> Unit = {}) {
+        if (autenticavel.autentica(senha)) {
+            println("Autenticado com sucesso!")
+            autenticado()
+        } else {
+            println("Falhou na autenticacao!")
+        }
+    }
+
+    fun pagamento() {
+        println("Fazendo uma operacao de pagamento")
+    }
+
+
 }
